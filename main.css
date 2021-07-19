@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #dfce6f;
+    font-family: 'Old Standard TT', serif;
+}
+
+.AnimFront {
+    height: 90vh;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textAnimFront_text1 {
+    opacity: 0;
+    transform: translateY(-300px);
+    color: #040b4d;
+    animation: animtext1 2.5s ;
+}
+
+.textAnimFront_text2 {
+    opacity: 0;
+    transform: translateX(-500px);
+    color: #040b4d;
+    animation: animtext2 2.5s ;
+    animation-delay: 2.5s;
+}
+
+.animFrontButton {
+    padding: 10px 80px;
+    opacity: 0;
+    margin: 20px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    background: #393a42;
+    color: #dfce6f;
+    animation: animButton 2.5s ;
+    animation-delay: 5s;
+}
+
+@keyframes animtext1 { 
+    from{ opacity:0; transform: translateY(-400); } 
+    to{opacity:1; transform: translateY(0); }
+  }
+
+  @keyframes animtext2 { 
+    from{ opacity:0; transform: translateX(-400); } 
+    to{opacity:1; transform: translateX(0); }
+  }
+
+  @keyframes animButton { 
+    from{ opacity:0;} 
+    to{opacity:1; }
+  }
+
+.pageContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #ffd900;
+  border-radius: 50%;
+  border-top: 16px solid #040b4d;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
