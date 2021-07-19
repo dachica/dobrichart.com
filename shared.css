@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&display=swap');
+
+
+.mainNavbar {
+    position: fixed;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    animation: animateNavbar 8s;
+    z-index: 100;
+}
+
+@keyframes animateNavbar { 
+    from{ opacity:0 } 
+    to{opacity:1 }
+  }
+
+.logoHeader {
+    display: flex;
+    align-items: center;
+    font-size: 1.75rem;
+    
+}
+
+.logoHeader a {
+    text-decoration: none;
+    color: black;
+}
+
+.mainNavbar_links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainNavbar_link {
+    padding: 10px 50px;
+}
+
+.mainNavbar_link a {
+    text-decoration: none;
+    color: black;
+    
+}
