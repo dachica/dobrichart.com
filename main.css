@@ -1,71 +1,143 @@
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background: #dfce6f;
-    font-family: 'Old Standard TT', serif;
+    margin: 0 auto;
+    background: #201f21;
+    /* background: linear-gradient(to right, rgb(38,40,44),rgb(24, 21, 21)); */
+    /* width: 100%; */
+    font-family: 'Inter', sans-serif;
 }
 
-.AnimFront {
-    height: 90vh;
-    font-size: 4rem;
+.main-content {
+  /* width: 80%; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+
+.intro {
+    width: 40%;
+    /* height: 60vh; */
+    
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-.textAnimFront_text1 {
-    opacity: 0;
-    transform: translateY(-300px);
-    color: #040b4d;
-    animation: animtext1 2.5s ;
+.intro_text1 {
+    color: rgb(253,199,147);
+    font-size: 3rem;
+    /* text-transform: lowercase; */
+    word-wrap: normal;
+    margin: 0 0 50px 0;
 }
 
-.textAnimFront_text2 {
-    opacity: 0;
-    transform: translateX(-500px);
-    color: #040b4d;
-    animation: animtext2 2.5s ;
-    animation-delay: 2.5s;
+.intro_text2 {
+    font-size: 2rem;
+    margin: 20px 0 50px 0;
+    color: #fff;
 }
 
-.animFrontButton {
+.enterButton {
     padding: 10px 80px;
-    opacity: 0;
-    margin: 20px;
+    margin: 120px 0 0 0;
     outline: none;
     border: none;
+    cursor: pointer;
     font-size: 20px;
-    background: #393a42;
-    color: #dfce6f;
+    color: #fff;
     animation: animButton 2.5s ;
     animation-delay: 5s;
+    border-radius: 63px;
+    background: transparent;
+    transition: 0.3s;
+    box-shadow:  5px 5px 5px #111314,
+             -5px -5px 5px #2f3136;
 }
 
-@keyframes animtext1 { 
-    from{ opacity:0; transform: translateY(-400); } 
-    to{opacity:1; transform: translateY(0); }
-  }
+.enterButton:hover {
+  color: rgb(255, 169, 89);
+}
 
-  @keyframes animtext2 { 
-    from{ opacity:0; transform: translateX(-400); } 
-    to{opacity:1; transform: translateX(0); }
-  }
-
-  @keyframes animButton { 
+  /* @keyframes animButton { 
     from{ opacity:0;} 
     to{opacity:1; }
-  }
+  }  */
 
-.pageContent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.neuMenu {
+  margin: 50px 0 0 0;
+} 
+
+.neuMenu-frame {
+  width: 500px;
+  height: 700px;
+  border-radius: 50px;
+  /* background: linear-gradient(-45deg, #0d0d0e, rgba(255, 255, 255, 0.062)); */
+  box-shadow:   15px 15px 25px #111314,
+                 -15px -15px 25px #2f3136,
+                 inset 5px 5px 5px #111314,
+                 inset -5px -5px 5px #2f3136;
+}
+
+.neuMenu-frame:hover {
+  
+    transition: 1s;
+    
+}
+
+.neuMenu-frame-title {
+  /* height: 50px; */
+  color: rgb(99, 99, 99);
+  font-size: 1.5rem;
+  letter-spacing: 10;
+  text-align: center;
+  padding: 25px;
+  background: rgba(12, 12, 12, 0.342);
+  border-radius: 50px 50px 0 0;
+  box-shadow: inset -5px -5px 5px #1e1e1f;
+}
+
+.neuMenu-frame_content {
+  height: calc(100% - 150px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.neuMenu-frame_content_circle_big {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #151516;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  box-shadow:   15px 15px 25px #111314,
+                 -15px -15px 25px #2f3136,
+                 inset 5px 5px 5px #111314,
+                 inset -5px -5px 5px #2f3136;
+}
+
+.neuMenu-frame_content_circle_smaller {
+  background: #201f21;
+  background: rgb(255, 169, 89);
+  background: radial-gradient(rgb(255, 169, 89), rgb(255, 0, 0));
+
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow:   15px 15px 25px #111314,
+                 -15px -15px 25px #2f3136,
+                 inset 5px 5px 5px #111314,
+                 inset -5px -5px 5px #2f3136;
 }
 
 #loader {
@@ -75,17 +147,19 @@ body {
   z-index: 1;
   width: 120px;
   height: 120px;
-  margin: -76px 0 0 -76px;
-  border: 16px solid #ffd900;
-  border-radius: 50%;
-  border-top: 16px solid #040b4d;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
+  animation: dash 2s linear infinite;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 200;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+#loader svg {
+  fill: #fff;
+}
+
+@keyframes dash {
+    100% { 
+      stroke-dashoffset: 0; 
+    }
   }
 
 
